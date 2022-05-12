@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import '../styles/tasklist.scss'
 
-import { FiTrash, FiCheckSquare } from 'react-icons/fi'
+import { FiTrash, FiCheckSquare, FiCheckCircle, FiTrash2 } from 'react-icons/fi'
 
 interface Task {
   id: number;
@@ -51,12 +51,12 @@ export function TaskList() {
   return (
     <section className="task-list container">
       <header>
-        <h2>Minhas tasks</h2>
+        <h2>Tasks</h2>
 
         <div className="input-group">
           <input 
             type="text" 
-            placeholder="Adicionar novo todo" 
+            placeholder="Adicionar nova task" 
             onChange={(e) => setNewTaskTitle(e.target.value)}
             value={newTaskTitle}
           />
@@ -84,7 +84,7 @@ export function TaskList() {
               </div>
 
               <button type="button" data-testid="remove-task-button" onClick={() => handleRemoveTask(task.id)}>
-                <FiTrash size={16}/>
+                <FiTrash2 size={16}/>
               </button>
             </li>
           ))}
